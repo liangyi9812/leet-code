@@ -1,10 +1,11 @@
 package com.edison.leftgod.minstack;
 
-import java.util.Comparator;
 import java.util.Objects;
 import java.util.Stack;
 
 /**
+ * 最小栈
+ *
  * @author LiangYi
  * @data 2022/4/7
  * @note
@@ -20,7 +21,7 @@ public class MiniStack<T extends Comparable<T>> {
     }
 
     public void push(T t) {
-        Objects.requireNonNull(t, "element to push can`t be null");
+        Objects.requireNonNull(t, "element to push can‘t be null");
         stackData.push(t);
         if (miniStore.isEmpty()) {
             miniStore.push(t);
