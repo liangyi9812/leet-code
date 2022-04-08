@@ -1,6 +1,6 @@
 package com.edison.leftgod.minstack;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,14 +11,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @note
  */
 class MiniStackTest {
-    private MiniStack<Integer> miniStack;
+    private static MiniStack<Integer> miniStack;
 
-    @BeforeEach
-    void setUp() {
+    @BeforeAll
+    static void setUp() {
         System.out.println("begin init miniStack");
         miniStack = new MiniStack<>();
         miniStack.push(3);
-        miniStack.push(5);
+        miniStack.push(3);
     }
 
     @Test
@@ -35,5 +35,12 @@ class MiniStackTest {
     void getMin() {
         System.out.println("miniStack.getMin() ==> " + miniStack.getMin());
         assertEquals(miniStack.getMin(), 3);
+    }
+
+    @Test
+    void baseTest() {
+        miniStack = new MiniStack<>();
+        miniStack.push(3);
+        miniStack.push(3);
     }
 }
