@@ -1,5 +1,6 @@
-package com.edison.leftgod.minstack;
+package com.edison.leftgod.stackandqueue.minstack;
 
+import com.edison.leftgod.stackandqueue.twostack.TwoStackQueue;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

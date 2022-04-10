@@ -1,4 +1,4 @@
-package com.edison.leftgod.minstack;
+package com.edison.leftgod.stackandqueue.minstack;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

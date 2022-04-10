@@ -1,4 +1,4 @@
-package com.edison.leftgod.minstack;
+package com.edison.leftgod.stackandqueue.minstack;
 
 import java.util.Objects;
 import java.util.Stack;
