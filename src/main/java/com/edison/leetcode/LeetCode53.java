@@ -8,7 +8,8 @@ package com.edison.leetcode;
 public class LeetCode53 {
 
     public static int maxSubArray(int[] nums) {
-        
+        // todo 未解
+        return 0;
     }
 
 }
