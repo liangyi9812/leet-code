@@ -4,16 +4,11 @@ import java.util.Arrays;
 
 /**
  * @author LiangYi
- * @date 2022/4/18
+ * @data 2022/4/17
+ * @note
  */
 public class LeetCode169 {
 
-    /**
-     * 输入：[2,2,1,1,1,2,2]
-     * 输出：2
-     * @param nums
-     * @return
-     */
     public static int majorityElement(int[] nums) {
         Arrays.sort(nums);
         if (nums[0] == nums[nums.length - 1]) {
@@ -23,13 +18,13 @@ public class LeetCode169 {
         int slow = 0;
         for (int fast = 0; fast < nums.length; fast++) {
             if (nums[slow] != nums[fast]) {
-                if (((fast == nums.length - 1) ? fast + 1 : fast) - slow > count) {
+                if (fast - slow > count - 1) {
                     return nums[slow];
                 }
                 slow = fast;
             }
         }
-        return nums[slow] == nums[nums.length - 1] ? nums[slow] : -1;
+        return -1;
     }
 
 }
