@@ -1,6 +1,7 @@
 package com.edison.leetcode;
 
 import com.edison.base.TreeNode;
+import com.edison.tree.TreeBase;
 
 import java.util.*;
 
@@ -12,35 +13,41 @@ import java.util.*;
 public class LeetCode144 {
 
     public static void main(String[] args) {
-        TreeNode treeNode8 = new TreeNode(8);
-        TreeNode treeNode7 = new TreeNode(7);
-        TreeNode treeNode5 = new TreeNode(5);
-        TreeNode treeNode3 = new TreeNode(3);
-        TreeNode treeNode2 = new TreeNode(2);
-        TreeNode root = new TreeNode(1);
-        root.right = treeNode2;
-        treeNode2.left = treeNode3;
-        treeNode2.right = treeNode5;
-        treeNode3.left = treeNode7;
-        treeNode3.right = treeNode8;
-        preorderTraversal(root).forEach(System.out::println);
+        TreeNode baseRoot = TreeBase.getBaseRoot();
+        preorderTraversal(baseRoot).forEach(System.out::print);
+        System.out.println();
+        System.out.println("==================");
+        preorder2(baseRoot).forEach(System.out::print);
     }
 
     public static List<Integer> preorderTraversal(TreeNode root) {
+        ArrayList<Integer> res = new ArrayList<>();
+        preorder(root, res);
+        return res;
+    }
+
+    private static void preorder(TreeNode root, List<Integer> res) {
         if (root == null) {
-            return new ArrayList<>();
+            return;
         }
-        List<Integer> res = new ArrayList<>();
-        ArrayDeque<TreeNode> queue = new ArrayDeque<>();
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            TreeNode poll = queue.pollLast();
-            res.add(poll.val);
-            if (poll.left != null) {
-                queue.offer(poll.left);
+        res.add(root.val);
+        preorder(root.left, res);
+        preorder(root.right, res);
+    }
+
+    public static List<Integer> preorder2(TreeNode root) {
+        ArrayList<Integer> res = new ArrayList<>();
+        Stack<TreeNode> nodeStack = new Stack<>();
+        nodeStack.push(root);
+
+        while (!nodeStack.isEmpty()) {
+            TreeNode node = nodeStack.pop();
+            res.add(node.val);
+            if (node.right != null) {
+                nodeStack.push(node.right);
             }
-            if (poll.right != null) {
-                queue.offer(poll.right);
+            if (node.left != null) {
+                nodeStack.push(node.left);
             }
         }
         return res;
