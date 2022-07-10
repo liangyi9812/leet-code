@@ -8,6 +8,7 @@ public class LeetCode338 {
 
     public static int[] countBits(int n) {
         // todo
+        return new int[0];
     }
 
 }

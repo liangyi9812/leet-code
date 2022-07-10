@@ -14,14 +14,11 @@ public class LeetCode26 {
      */
     public static int removeDuplicates(int[] nums) {
         int slow = 0;
-        for (int fast = 1; fast < nums.length; fast++) {
-            if (nums[slow] == nums[fast]) {
-                // 如果相等的话
-                // fast往后移
-                continue;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != nums[slow]) {
+                slow++;
+                nums[slow] = nums[i];
             }
-            // 直到找到不相等的 slow往前移到fast
-            nums[++slow] = nums[fast];
         }
         return slow + 1;
     }
