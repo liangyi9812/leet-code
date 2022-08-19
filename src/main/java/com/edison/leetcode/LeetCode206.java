@@ -24,12 +24,12 @@ public class LeetCode206 {
     }
 
     public static ListNode reverseList(ListNode head) {
-        ListNode pre = null;
-        while (head != null) {
-            ListNode next = head.next;
-            head.next = pre;
-            pre = head;
-            head = next;
+        ListNode cur = head, pre = null;
+        while (cur != null) {
+            ListNode tempNext = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = tempNext;
         }
         return pre;
     }

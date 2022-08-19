@@ -8,7 +8,6 @@ package com.edison;
 public class BaseClass {
 
     public static void main(String[] args) {
-        int i = 0b0000;
-        System.out.println(i);
+
     }
 }

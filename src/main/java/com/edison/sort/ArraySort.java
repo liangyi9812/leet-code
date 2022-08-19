@@ -16,6 +16,14 @@ public class ArraySort {
     }
 
     /**
+     * 归并排序
+     * @param array
+     */
+    public static void mergeSort(int[] array) {
+
+    }
+
+    /**
      * 冒泡排序
      *
      * @param array

@@ -69,4 +69,13 @@ public class TreeBase {
         return treeNode1;
     }
 
+    public static TreeNode getSearchRoot() {
+        TreeNode treeNode3 = new TreeNode(3);
+        TreeNode treeNode1 = new TreeNode(1);
+        TreeNode treeNode2 = new TreeNode(2);
+        treeNode2.right = treeNode3;
+        treeNode2.left = treeNode1;
+        return treeNode2;
+    }
+
 }

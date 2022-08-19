@@ -1,7 +1,5 @@
 package com.edison.jdkcollection.hashmap;
 
-import java.util.HashMap;
-
 /**
  * @author LiangYi
  * @date 2022-6-17
@@ -9,8 +7,16 @@ import java.util.HashMap;
 public class HashMapTest {
 
     public static void main(String[] args) {
-        HashMap<String, Integer> hashMap = new HashMap<>();
-        hashMap.put("first", 999);
+        HashMapThread thread0 = new HashMapThread();
+        HashMapThread thread1 = new HashMapThread();
+        HashMapThread thread2 = new HashMapThread();
+        HashMapThread thread3 = new HashMapThread();
+        HashMapThread thread4 = new HashMapThread();
+        thread0.start();
+        thread1.start();
+        thread2.start();
+        thread3.start();
+        thread4.start();
     }
 
 }

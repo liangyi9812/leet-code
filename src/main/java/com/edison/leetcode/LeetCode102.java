@@ -12,31 +12,28 @@ import java.util.*;
 public class LeetCode102 {
 
     public static void main(String[] args) {
-        TreeNode bfsBaseRoot1 = TreeBase.getBfsBaseRoot();
         TreeNode bfsBaseRoot2 = TreeBase.getBfsBaseRoot();
         System.out.println(levelOrder(bfsBaseRoot2));
-        System.out.println(dfsOrder(bfsBaseRoot2));
     }
 
     public static List<List<Integer>> levelOrder(TreeNode root) {
-        final TreeNode nil = new TreeNode();
-        ArrayList<List<Integer>> res = new ArrayList<>();
+        List<List<Integer>> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
         Queue<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
             int size = queue.size();
             List<Integer> tempRes = new ArrayList<>();
             for (int i = 0; i < size; i++) {
-                TreeNode treeNode = queue.poll();
-                if (treeNode == null) {
-                    continue;
+                TreeNode curNode = queue.poll();
+                tempRes.add(curNode.val);
+                if (curNode.left != null) {
+                    queue.offer(curNode.left);
                 }
-                if (treeNode != nil) {
-                    tempRes.add(treeNode.val);
-                    queue.offer(treeNode.left != null ? treeNode.left : nil);
-                    queue.offer(treeNode.right != null ? treeNode.right : nil);
-                } else {
-                    tempRes.add(null);
+                if (curNode.right != null) {
+                    queue.offer(curNode.right);
                 }
             }
             res.add(tempRes);
