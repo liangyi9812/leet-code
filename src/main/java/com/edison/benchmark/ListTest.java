@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author LiangYi
- * @data 2022/4/9
+ * @date 2022/4/9
  * @note
  */
 
@@ -37,7 +37,7 @@ public class ListTest {
         arrayList = new ArrayList<>(0);
         linkedList = new LinkedList<>();
         for (int i = 0; i < n; i++) {
-            arrayList.add(i);
+            arrayList.add(i, 1);
             linkedList.add(i);
         }
     }

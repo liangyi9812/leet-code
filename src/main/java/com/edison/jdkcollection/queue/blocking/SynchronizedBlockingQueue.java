@@ -1,12 +1,15 @@
 package com.edison.jdkcollection.queue.blocking;
 
+import com.edison.tools.Tool;
+
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author liangyi
  * @date 2024/3/4
  */
-public class BlockingQueue {
+public class SynchronizedBlockingQueue {
     // 放置元素索引
     private int inputIndex;
     // 取出元素索引
@@ -17,7 +20,7 @@ public class BlockingQueue {
     private int count;
 
 
-    public BlockingQueue(int capacity) {
+    public SynchronizedBlockingQueue(int capacity) {
         elements = new String[capacity];
     }
 
@@ -81,5 +84,36 @@ public class BlockingQueue {
         }
         count--;
         return e;
+    }
+
+    public static void main(String[] args) {
+        SynchronizedBlockingQueue queue = new SynchronizedBlockingQueue(10);
+        final int range = 20;
+        // 线程不断放置元素
+        Thread putThread = new Thread(() -> {
+            for (int i = 0; i < range; i++) {
+                try {
+                    queue.put("element" + i);
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, "put-thread");
+        Tool.print("putThread.isDaemon() -> " + putThread.isDaemon());
+        putThread.start();
+
+        // 线程取出元素
+        new Thread(() -> {
+            for (int i = 0; i < range; i++) {
+                try {
+                    queue.take();
+                    TimeUnit.SECONDS.sleep(2);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, "take-thread").start();
     }
 }

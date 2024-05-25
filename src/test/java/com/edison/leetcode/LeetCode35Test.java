@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author LiangYi
- * @data 2022/4/13
+ * @date 2022/4/13
  * @note
  */
 class LeetCode35Test {

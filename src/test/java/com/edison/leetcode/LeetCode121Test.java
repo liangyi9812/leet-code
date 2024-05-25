@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * @author LiangYi
- * @data 2022/4/15
+ * @date 2022/4/15
  * @note
  */
 class LeetCode121Test {

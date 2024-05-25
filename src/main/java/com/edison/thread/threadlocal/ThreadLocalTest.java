@@ -1,4 +1,6 @@
-package com.edison.thread;
+package com.edison.thread.threadlocal;
+
+import com.edison.tools.Tool;
 
 /**
  * @author LiangYi
@@ -6,10 +8,14 @@ package com.edison.thread;
  */
 public class ThreadLocalTest {
 
-    private static final ThreadLocal<String> threadLocal = ThreadLocal.withInitial(() -> "empty");
+    private static final ThreadLocal<String> threadLocal1 = ThreadLocal.withInitial(() -> "i'm threadLocal1");
+    private static final ThreadLocal<String> threadLocal2 = ThreadLocal.withInitial(() -> "i'm threadLocal2");
 
     public static void main(String[] args) {
-        threadLocal.set(null);
+        Tool.print("value: " + threadLocal1.get());
+        Tool.print("value: " + threadLocal2.get());
+        Tool.print("value: " + threadLocal1.get());
+        Tool.print("value: " + threadLocal2.get());
     }
 
 }

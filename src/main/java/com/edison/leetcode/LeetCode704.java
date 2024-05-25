@@ -2,7 +2,7 @@ package com.edison.leetcode;
 
 /**
  * @author LiangYi
- * @data 2022/4/12
+ * @date 2022/4/12
  * @note
  */
 public class LeetCode704 {

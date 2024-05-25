@@ -1,4 +1,4 @@
-package com.edison.reflect.cglib;
+package com.edison.reflect.dynamicproxy.cglib;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
  */
 public class UserCGLibProxy<T> implements MethodInterceptor {
 
-    private T target;
+    private final T target;
 
     public UserCGLibProxy(T target) {
         this.target = target;
@@ -26,6 +26,8 @@ public class UserCGLibProxy<T> implements MethodInterceptor {
         return null;
     }
 
+
+    @SuppressWarnings("unchecked")
     public T getProxyBean() {
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(target.getClass());

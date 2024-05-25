@@ -17,6 +17,7 @@ public class TreeBase {
      * @return rootTreeNode
      */
     public static TreeNode getBaseRoot() {
+        TreeNode treeNode11 = new TreeNode(11);
         TreeNode treeNode8 = new TreeNode(8);
         TreeNode treeNode7 = new TreeNode(7);
         TreeNode treeNode6 = new TreeNode(6);
@@ -30,6 +31,7 @@ public class TreeBase {
         treeNode3.right = treeNode7;
         treeNode2.left = treeNode6;
         treeNode2.right = treeNode8;
+        treeNode7.left = treeNode11;
         return treeNode1;
     }
 

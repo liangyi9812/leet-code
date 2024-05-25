@@ -8,17 +8,29 @@ import java.util.concurrent.locks.LockSupport;
  * @author liangyi
  * @date 2024/3/5
  */
-public class ParkDemo {
+public class ParkInterruptDemo {
     public static void main(String[] args) {
+        Thread t = new Thread(new ParkThread(), "ParkThread");
+        t.start();
+        Tool.sleepSeconds(1);
+        Tool.print("开始interrupt");
+        t.interrupt();
 
-        Tool.print("开始运行");
-        LockSupport.unpark(Thread.currentThread());
-        LockSupport.unpark(Thread.currentThread());
-        LockSupport.park();
-        Tool.print("第一次park结束");
-        LockSupport.park();
-        Tool.print("第二次park结束");
-        Tool.print("运行结束");
+    }
 
+    static class ParkThread implements Runnable{
+
+        @Override
+        public void run() {
+            Tool.print("开始阻塞");
+            LockSupport.park();
+            Tool.print("结束阻塞: Thread.interrupted() ->" + Thread.currentThread().isInterrupted());
+            LockSupport.park();
+            Tool.print("第二次结束阻塞: Thread.interrupted() ->" + Thread.currentThread().isInterrupted());
+            LockSupport.park();
+            Tool.print("第三次结束阻塞: Thread.interrupted() ->" + Thread.currentThread().isInterrupted());
+            LockSupport.park();
+            Tool.print("第四次结束阻塞: Thread.interrupted() ->" + Thread.currentThread().isInterrupted());
+        }
     }
 }

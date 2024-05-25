@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author LiangYi
- * @data 2022/4/17
+ * @date 2022/4/17
  * @note
  */
 class LeetCode169Test {

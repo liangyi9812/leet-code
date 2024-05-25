@@ -1,7 +1,11 @@
-package com.edison.spi;/**
- *
- *
+package com.edison.spi;
+
+/**
  * @author liangyi
  * @date 2024/3/22
- */public interface MySPIServiceInterface {
+ */
+public interface MySPIServiceInterface {
+
+    void doSomething(String content);
+
 }

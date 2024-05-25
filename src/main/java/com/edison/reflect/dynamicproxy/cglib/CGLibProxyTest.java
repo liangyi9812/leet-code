@@ -1,4 +1,4 @@
-package com.edison.reflect.cglib;
+package com.edison.reflect.dynamicproxy.cglib;
 
 /**
  * @author LiangYi

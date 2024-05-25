@@ -1,13 +1,17 @@
 package com.edison;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author LiangYi
- * @data 2022/3/24
- * @note
+ * @date 2022/3/24
  */
 public class BaseClass {
 
-    public static void main(String[] args) {
+    static final Map<String, String> MAP = new HashMap<>();
 
+    public static void main(String[] args) {
+        
     }
 }

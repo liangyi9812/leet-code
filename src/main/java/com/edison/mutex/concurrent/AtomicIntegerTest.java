@@ -1,7 +1,8 @@
 package com.edison.mutex.concurrent;
 
+import lombok.SneakyThrows;
+
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.locks.LockSupport;
 
 /**
  * @author LiangYi
@@ -9,18 +10,41 @@ import java.util.concurrent.locks.LockSupport;
  */
 public class AtomicIntegerTest {
 
-    public static void main(String[] args) {
-        Integer i = 0;
-        AtomicInteger atomicInteger = new AtomicInteger(0);
-        for (int j = 0; j < 100; j++) {
-            new Thread(() -> {
+    static class AtomicIntegerDemo {
+        private final AtomicInteger atomicInteger = new AtomicInteger(0);
 
-                atomicInteger.addAndGet(1);
-            }).start();
+        public int increment() {
+            return atomicInteger.incrementAndGet();
         }
-        System.out.println(i);
-        System.out.println(atomicInteger.get());
 
-        LockSupport.unpark(Thread.currentThread());
+        public int decrement() {
+            return atomicInteger.decrementAndGet();
+        }
+
+        public int get() {
+            return atomicInteger.get();
+        }
+    }
+
+    @SneakyThrows
+    public static void main(String[] args) {
+        AtomicIntegerDemo demo = new AtomicIntegerDemo();
+        Thread thread1 = new Thread(() -> {
+            for (int j = 0; j < 1000; j++) {
+                demo.increment();
+            }
+        }, "increment-1");
+        thread1.start();
+
+        Thread thread2 = new Thread(() -> {
+            for (int j = 0; j < 1000; j++) {
+                demo.increment();
+            }
+        }, "increment-2");
+        thread2.start();
+        thread1.join();
+        thread2.join();
+
+        System.out.println("result: " + demo.get());
     }
 }

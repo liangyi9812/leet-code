@@ -7,7 +7,7 @@ import java.util.Stack;
  * 最小栈
  *
  * @author LiangYi
- * @data 2022/4/7
+ * @date 2022/4/7
  * @note
  */
 public class MiniStack<T extends Comparable<T>> {

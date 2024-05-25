@@ -9,11 +9,12 @@ import java.util.PriorityQueue;
 public class PriorityQueueTest {
 
     public static void main(String[] args) {
+        // 最小堆
         PriorityQueue<String> priorityQueue = new PriorityQueue<>();
 
 
-        priorityQueue.offer("1");
         priorityQueue.offer("2");
+        priorityQueue.offer("1");
         priorityQueue.offer("5");
         priorityQueue.offer("3");
         priorityQueue.offer("4");

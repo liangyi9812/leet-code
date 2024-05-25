@@ -1,7 +1,9 @@
-package com.edison.exception;/**
- *
- *
+package com.edison.exception;
+
+/**
  * @author liangyi
  * @date 2024/3/2
- */public class MyRuntimeException {
+ */
+public class MyRuntimeException extends RuntimeException{
+
 }

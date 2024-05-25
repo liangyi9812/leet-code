@@ -1,7 +1,8 @@
-package com.edison.exception.runnable;
+package com.edison.exception.thread;
+
+import com.edison.tools.Tool;
 
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.FutureTask;
 
 /**
  * @author liangyi
@@ -12,13 +13,11 @@ public class ExceptionInRunnable {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         Runnable runnable = () -> {
             System.out.println("runnable~");
-            throw new RuntimeException("exception in runnable");
+            Tool.causeRuntimeException();
         };
 
-        FutureTask<Void> futureTask = new FutureTask<>(runnable, null);
-        new Thread(futureTask).start();
-        Void result = futureTask.get();
-        System.out.println(result);
+        new Thread(runnable).start();
+        System.out.println("main finished");
     }
 
 }

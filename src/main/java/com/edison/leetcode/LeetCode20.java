@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * @author LiangYi
- * @data 2022/3/22
+ * @date 2022/3/22
  * @note
  */
 public class LeetCode20 {

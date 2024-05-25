@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 /**
  * @author LiangYi
- * @data 2022/3/22
+ * @date 2022/3/22
  * @note
  */
 public class ListNode {

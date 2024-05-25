@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * @author LiangYi
- * @data 2022/4/10
+ * @date 2022/4/10
  * @note
  */
 public class TwoStackQueue<T> {

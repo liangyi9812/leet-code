@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author LiangYi
- * @data 2022/4/8
+ * @date 2022/4/8
  * @note
  */
 class MiniStackTest {

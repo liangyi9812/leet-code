@@ -1,4 +1,4 @@
-package com.edison.reflect.jdkproxy;
+package com.edison.reflect.dynamicproxy.jdkproxy;
 
 /**
  * @author LiangYi

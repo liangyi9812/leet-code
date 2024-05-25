@@ -1,7 +1,8 @@
-package com.edison.gc;/**
- *
- *
+package com.edison.gc;
+
+/**
  * @author liangyi
  * @date 2024/3/2
- */public class ReferenceDemo {
+ */
+public class ReferenceDemo {
 }

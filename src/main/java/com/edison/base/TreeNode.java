@@ -5,7 +5,7 @@ import java.util.Queue;
 
 /**
  * @author LiangYi
- * @data 2022/3/23
+ * @date 2022/3/23
  * @note
  */
 public class TreeNode {

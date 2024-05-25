@@ -7,12 +7,44 @@ package com.edison;
 public class Main {
 
     public static void main(String[] args) {
-        Integer i = 10;
-
-
+        final int[] value = {1, 2, 3};
     }
 
-    public static void pass(Integer i) {
-        System.out.println(i == new Integer(10));
+}
+
+class Computer {
+    private String brand;
+
+    public IBM getBrand() throws ComputerSonException {
+        return new IBM();
+    }
+
+}
+
+class IBM extends Computer {
+    private String brand;
+
+    @Override
+    public IBM getBrand() throws ComputerSonSonException {
+        return this;
+    }
+
+}
+
+class ComputerFotherException extends Exception {
+    public ComputerFotherException(String message) {
+        super(message);
+    }
+}
+
+class ComputerSonException extends ComputerFotherException {
+    public ComputerSonException(String message) {
+        super(message);
+    }
+}
+
+class ComputerSonSonException extends ComputerSonException {
+    public ComputerSonSonException(String message) {
+        super(message);
     }
 }

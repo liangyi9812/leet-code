@@ -1,4 +1,4 @@
-package com.edison.reflect.jdkproxy;
+package com.edison.reflect.dynamicproxy.jdkproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

@@ -1,7 +1,7 @@
 package com.edison.jdkcollection.queue;
 
 import java.util.ArrayDeque;
-import java.util.LinkedList;
+import java.util.Deque;
 
 /**
  * @author LiangYi
@@ -11,9 +11,8 @@ public class QueueTest {
 
     public static void main(String[] args) {
 
-        ArrayDeque<String> arrayDeque = new ArrayDeque<>();
+        Deque<String> collection = new ArrayDeque<>(2);
 
-        LinkedList<String> linkedList = new LinkedList<>();
 
         // 左贵右贱 左头右尾
         // Queue 接口	抛出异常	    返回特殊值
@@ -21,22 +20,16 @@ public class QueueTest {
         // 删除队首	    remove()	poll()
         // 查询队首元素	element()	peek()
 
-        arrayDeque.add("java");
-        arrayDeque.add("python");
-        arrayDeque.add("go");
+        collection.add("java");
+        collection.add("python");
+        collection.add("go");
 
-        arrayDeque.addLast("c++");
+        System.out.println(collection);
 
-        arrayDeque.push("rust");
-        arrayDeque.push(null);
+        // 插头 equivalent to addFirst
+        collection.push("stack");
 
-        System.out.println(arrayDeque);
-        //  [java, python, go, c++]
-
-        System.out.println(arrayDeque.remove());
-        //  java
-
-
+        System.out.println(collection);
     }
 
 }

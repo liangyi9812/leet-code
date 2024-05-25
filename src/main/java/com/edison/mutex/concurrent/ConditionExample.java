@@ -15,7 +15,7 @@ public class ConditionExample {
     private final Condition notFull = lock.newCondition();
     private final Condition notEmpty = lock.newCondition();
 
-    private final Queue<String> queue = new LinkedList<>();
+    final Queue<String> queue = new LinkedList<>();
     private final int queueSize = 10;
 
     class Producer extends Thread {

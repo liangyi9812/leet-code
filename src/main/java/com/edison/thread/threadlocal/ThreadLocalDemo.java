@@ -1,4 +1,4 @@
-package com.edison.thread;
+package com.edison.thread.threadlocal;
 
 import java.lang.reflect.Field;
 
