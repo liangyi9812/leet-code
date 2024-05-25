@@ -1,4 +1,4 @@
-package com.edison.socket.bio.case1;
+package com.edison.socket.bio;
 
 import java.io.IOException;
 import java.io.InputStreamReader;

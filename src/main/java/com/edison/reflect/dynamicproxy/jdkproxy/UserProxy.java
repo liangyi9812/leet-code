@@ -19,9 +19,14 @@ public class UserProxy<T> implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("before method " + method.getName());
+        // 使用proxy对象调用其他方法
+        if (method.getName().equals("addUser")) {
+            Method otherMethod = proxy.getClass().getMethod("updateUser", String.class);
+            otherMethod.invoke(proxy, "John Doe");
+        }
         Object result = method.invoke(target, args);
-        System.out.println("after method " + method.getName() + "result:" + result);
-        return null;
+        System.out.println("after method " + method.getName() + " result: " + result);
+        return result;
     }
 
     @SuppressWarnings("unchecked")
